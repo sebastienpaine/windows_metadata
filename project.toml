@@ -1,0 +1,23 @@
+[build-system]
+requires = ["pywin32"]
+build-backend = "hatchling.build"
+
+[project]
+name = "windows_metadata"
+version = "0.1.0"
+authors = [
+  { name="Sébastien Paine", email="sebastienpaine@me.com" },
+]
+description = "Read Windows metadata from files"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/sebastienpaine/windows_metadata"
+"Bug Tracker" = "https://github.com/sebastienpaine/windows_metadata/issues"
