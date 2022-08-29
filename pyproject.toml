@@ -1,6 +1,6 @@
 [build-system]
-requires = ["pywin32"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "windows_metadata"
@@ -17,6 +17,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows",
 ]
+dependencies = [
+    "pywin32",
+]
+keywords = ["windows", "metadata", "attributes", "details"]
+
+[project.optional-dependencies]
+dev = ["black", "pylint"]
 
 [project.urls]
 "Homepage" = "https://github.com/sebastienpaine/windows_metadata"
