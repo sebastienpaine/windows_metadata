@@ -49,11 +49,11 @@ class WindowsAttributes:
     """This class loads and stores all the Windows metadata information for a given file"""
 
     def __init__(self, file_path: PathLike) -> None:
+        self.__dict__["attr_dict"] = {}
         _path = Path(file_path)
         _sh = EnsureDispatch("Shell.Application", 0)
         self.filename = _path.name
         self.namespace = _sh.NameSpace(str(_path.parent.absolute()))
-        self.attr_dict = {}
         self._get_attributes()
 
     def get_attribute_dict(self) -> Dict[str, str]:
@@ -73,7 +73,9 @@ class WindowsAttributes:
 
         attr_dict = {}
         for col in range(len(_attr_list)):
-            val = self.namespace.GetDetailsOf(self.namespace.ParseName(self.filename), col)
+            val = self.namespace.GetDetailsOf(
+                self.namespace.ParseName(self.filename), col
+            )
             if val:
                 attr_dict[_parse_attr_name(_attr_list[col])] = str(val)
                 attr_dict[_attr_list[col]] = str(val)

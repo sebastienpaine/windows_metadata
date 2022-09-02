@@ -1,2 +1,4 @@
-__version__ = "0.1.1"
-from windows_metadata import WindowsAttributes
+__version__ = "0.1.2"
+from .windows_metadata import WindowsAttributes
+
+__all__ = ["WindowsAttributes"]
